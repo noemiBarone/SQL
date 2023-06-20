@@ -1,0 +1,48 @@
+
+/*Esercizio 2
+SELECT NAME FROM INGREDIENT;
+
+SELECT NAME, PRICE FROM INGREDIENT;
+
+ORDER BY NAME;*/
+
+SELECT * FROM INGREDIENT
+WHERE GLUTEN_FREE;
+
+/*Esercizio 3*/
+
+SELECT * FROM INGREDIENT;
+WHERE PRICE <= 15;
+WHERE VEGETARIAN;
+SELECT * FROM MEAL
+WHERE CALORIES > 500;
+WHERE PRICE >= 15 AND PRICE <= 16;
+
+SELECT * FROM INGREDIENT
+WHERE GLUTEN_FREE AND (!CONTAINS_LACTOSE);
+WHERE PRICE <= 15 OR CALORIES >= 600;
+WHERE GLUTEN_FREE OR VEGAN;
+WHERE NAME = 'Pesto pasta';
+WHERE CONTAINS_LACTOSE;
+WHERE PRICE >= 20 AND CALORIES <= 800;
+
+/*Esercizio 5*/
+Use all of the functions below, find out what they do, write a description for them here or in the comments of the code. Add a meaningful column alias
+
+ CONCAT(" Calorie: ", MEAL_CALORIES) AS NAME_FORMATTED // unisce due stringhe
+ LOWER(MEAL_NAME) AS NAME_LOWERCASE //mette in minuscolo una stringa
+ UPPER(MEAL_NAME) AS NAME_LOWERCASE //mette in maiuscolo una stringa
+ TRIM(INGREDIENT_NAME) AS REMOVE_SPACE_NAME // toglie gli spazi bianchi a fine riga
+ LENGTH(INGREDIENT_NAME) AS LENGTH_NAME // ritorna la lunghezza di una stringa
+ SUBSTRING(INGREDIENT_NAME, 4)  AS NAME_REDUCE// estrae una sottostringhe
+ ROUND(MEAL_PRICE, 2) AS ROUND_VALUE //arrotonda un numero decimale
+ DATE_ADD(TIME_MEAL_ORDERED, INTERVAL 9 MONTH)  AS MODIFIED_DATE//sposta avanti una data
+ DATE_SUB("2017-06-15", INTERVAL 10 DAY) AS SUBSTRACT_DATE//estrae una periodo da una data
+ FORMAT(COLUMN, FORMAT_STRING) AS FORMATTED_CULTURE_STRING //Restituisce un valore formattato con il formato specificato e impostazioni cultura facoltative
+
+
+
+ SELECT NOW();
+ SELECT DATE_ADD(DATE_ADD(DATE_ADD(NOW(), INTERVAL
+ select date_add(date_add(date_add(now() , interval 5 day), interval 1 week), interval 2 month) as birth_day
+
