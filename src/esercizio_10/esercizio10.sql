@@ -1,4 +1,4 @@
-
+#Esercizio svolto con Mauro
 #Using the INGREDIENT and MEAL tables, write a query to return the name of all meals that contain garlic
 
 select * from MEAL m
